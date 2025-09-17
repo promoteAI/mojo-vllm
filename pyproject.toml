@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61", "torch"]  # 添加 torch 作为构建依赖，解决 flash-attn 构建时找不到 torch 的问题
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mojo-vllm"
+version = "0.1.0"
+authors = [{ name = "Hanjiang Chen" }]
+license = "MIT"
+license-files = ["LICENSE"]
+readme = "README.md"
+description = "a lightweight vLLM implementation built  from scratch in mojo language"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "torch>=2.4.0",
+    "transformers>=4.51.0",
+    "xxhash",
+    "triton>=3.0.0",
+    # flash-attn 需要使用 --no-build-isolation 安装，建议单独手动安装
+    # "flash-attn",
+]
+
+[project.urls]
+Homepage="https://github.com/promoteAI/mojo-vllm.git"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mojovllm*"]
+
+[[tool.uv.index]]
+# url = "https://repo.huaweicloud.com/repository/pypi/simple"
+# url = "http://pypi.mirrors.ustc.edu.cn/simple/"
+# url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+default = true
