@@ -55,4 +55,4 @@ See `bench.py` for benchmark.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=romoteAI/mojo-vllm&type=Date)](https://www.star-history.com/#promoteAI/mojo-vllm&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=promoteAI/mojo-vllm&type=Date)](https://www.star-history.com/#promoteAI/mojo-vllm&Date)
