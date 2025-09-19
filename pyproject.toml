@@ -12,12 +12,12 @@ readme = "README.md"
 description = "a lightweight vLLM implementation built  from scratch in mojo language"
 requires-python = ">=3.10,<3.13"
 dependencies = [
-    "torch>=2.4.0",
+    "torch>=2.8.0",
     "transformers>=4.51.0",
     "xxhash",
     "triton>=3.0.0",
     # flash-attn 需要使用 --no-build-isolation 安装，建议单独手动安装
-    "flash-attn",
+    "flash-attn==2.8.3",
     "setuptools>=80.9.0",
 ]
 
