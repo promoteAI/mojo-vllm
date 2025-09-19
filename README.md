@@ -1,6 +1,6 @@
 # Mojo-vLLM
 
-A lightweight vLLM implementation built from scratch.
+A lightweight vLLM implementation built from scratch in mojo.
 
 ## Key Features
 
