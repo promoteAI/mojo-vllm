@@ -42,6 +42,7 @@ See `bench.py` for benchmark.
 **Test Configuration:**
 - Hardware: Quadro RTX 4000 (8GB)
 - Model: Qwen3-0.6B
+- Vllm Version: 0.10.2
 - Total Requests: 8 sequences
 - Input Length: Randomly sampled between 100–1024 tokens
 - Output Length: Randomly sampled between 100–1024 tokens
@@ -49,7 +50,7 @@ See `bench.py` for benchmark.
 **Performance Results:**
 | Inference Engine | Output Tokens | Time (s) | Throughput (tokens/s) |
 |----------------|-------------|----------|-----------------------|
-| vLLM           | 133,966     | 98.37    | 1361.84               |
+| vLLM           | 3,739     | 90.64    | 41.25               |
 | Mojo-vLLM      | 3,739     | 204.49    | 18.28               |
 
 
