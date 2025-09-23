@@ -63,9 +63,13 @@ class Scheduler:
         self.waiting.appendleft(seq)
 
     def postprocess(self, seqs: list[Sequence], token_ids: list[int]) -> list[bool]:
+        finished_flags: list[bool] = []
         for seq, token_id in zip(seqs, token_ids):
             seq.append_token(token_id)
-            if (not seq.ignore_eos and token_id == self.eos) or seq.num_completion_tokens == seq.max_tokens:
+            is_finished = (not seq.ignore_eos and token_id == self.eos) or (seq.num_completion_tokens == seq.max_tokens)
+            if is_finished:
                 seq.status = SequenceStatus.FINISHED
                 self.block_manager.deallocate(seq)
                 self.running.remove(seq)
+            finished_flags.append(is_finished)
+        return finished_flags

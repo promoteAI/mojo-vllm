@@ -10,8 +10,7 @@ def main():
 
     sampling_params = SamplingParams(temperature=0.6, max_tokens=256)
     prompts = [
-        "introduce yourself",
-        "list all prime numbers within 100",
+        "鞠婧祎是谁？",
     ]
     prompts = [
         tokenizer.apply_chat_template(
@@ -21,12 +20,23 @@ def main():
         )
         for prompt in prompts
     ]
-    outputs = llm.generate(prompts, sampling_params)
+    # outputs = llm.generate(prompts, sampling_params)
 
-    for prompt, output in zip(prompts, outputs):
-        print("\n")
-        print(f"Prompt: {prompt!r}")
-        print(f"Completion: {output['text']!r}")
+    # for prompt, output in zip(prompts, outputs):
+    #     print("\n")
+    #     print(f"Prompt: {prompt!r}")
+    #     print(f"Completion: {output['text']!r}")
+    
+    # 流式使用
+    for ev in llm.generate(prompts, sampling_params, stream=True,use_tqdm=False):
+        # ev = {
+        #   "index": seq_id,
+        #   "delta_text": 本次新增文本,
+        #   "text": 当前完整文本,
+        #   "token_id": int,
+        #   "finished": bool
+        # }
+        print(ev["delta_text"], end="", flush=True)
 
 
 if __name__ == "__main__":
