@@ -16,9 +16,8 @@ dependencies = [
     "transformers>=4.51.0",
     "xxhash",
     "triton>=3.0.0",
-    # flash-attn 需要使用 --no-build-isolation 安装，建议单独手动安装
-    "flash-attn==2.8.3",
     "setuptools>=80.9.0",
+    "vllm",
 ]
 
 [tool.uv.extra-build-dependencies]

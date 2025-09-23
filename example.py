@@ -10,7 +10,7 @@ def main():
 
     sampling_params = SamplingParams(temperature=0.6, max_tokens=256,ignore_eos=True)
     prompts = [
-        "鞠婧祎是谁？",
+        "鞠婧祎是谁？"
     ]
     prompts = [
         tokenizer.apply_chat_template(
@@ -20,6 +20,7 @@ def main():
         )
         for prompt in prompts
     ]
+    # 非流式
     # outputs = llm.generate(prompts, sampling_params)
 
     # for prompt, output in zip(prompts, outputs):

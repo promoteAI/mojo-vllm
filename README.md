@@ -40,9 +40,9 @@ outputs[0]["text"]
 See `bench.py` for benchmark.
 
 **Test Configuration:**
-- Hardware: RTX 4070 Laptop (8GB)
+- Hardware: Quadro RTX 4000 (8GB)
 - Model: Qwen3-0.6B
-- Total Requests: 256 sequences
+- Total Requests: 8 sequences
 - Input Length: Randomly sampled between 100–1024 tokens
 - Output Length: Randomly sampled between 100–1024 tokens
 
@@ -50,7 +50,7 @@ See `bench.py` for benchmark.
 | Inference Engine | Output Tokens | Time (s) | Throughput (tokens/s) |
 |----------------|-------------|----------|-----------------------|
 | vLLM           | 133,966     | 98.37    | 1361.84               |
-| Mojo-vLLM      | 133,966     | 93.41    | 1434.13               |
+| Mojo-vLLM      | 3,739     | 204.49    | 18.28               |
 
 
 ## Star History
