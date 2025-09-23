@@ -16,8 +16,8 @@ dependencies = [
     "transformers>=4.51.0",
     "xxhash",
     "triton>=3.0.0",
-    "setuptools>=80.9.0",
-    "vllm",
+    "setuptools>=77.0.3",
+    "vllm==0.10.2",
 ]
 
 [tool.uv.extra-build-dependencies]
